@@ -3,7 +3,7 @@
 ### Info ->
 Present systems: Encryption, user validation system through SQLITE3 , error alert
 
-###Download APP:
+### Download .exe:
 https://drive.google.com/file/d/1ozqfBey6owQAGOPWWarWKAkXvCjc1Z-5/view?usp=sharing
 
 # Screen:
