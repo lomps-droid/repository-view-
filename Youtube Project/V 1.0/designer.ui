@@ -26,8 +26,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
@@ -53,6 +52,81 @@ background: #6363B8;
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
+    <widget class="QPushButton" name="player_button">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>10</y>
+       <width>75</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+border: 2px solid black;
+border-radius: 13px;
+color: white
+}
+
+QPushButton:Hover{
+border: 2px solid white;
+border-radius: 13px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Player</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="download_button">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>75</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+border: 2px solid black;
+border-radius: 13px;
+color: white
+}
+
+QPushButton:Hover{
+border: 2px solid white;
+border-radius: 13px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Download</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="close">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>10</y>
+       <width>75</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+border: 2px solid black;
+border-radius: 13px;
+color: white
+}
+
+QPushButton:Hover{
+border: 2px solid white;
+border-radius: 13px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Exit</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QFrame" name="img_player">
     <property name="geometry">
@@ -72,6 +146,70 @@ background: #6363B8;
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="geometry">
+      <rect>
+       <x>-1</x>
+       <y>-1</y>
+       <width>411</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <widget class="QWidget" name="download_page">
+      <widget class="QLineEdit" name="addURL">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>40</y>
+         <width>351</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+border: 2px solid black;
+border-radius: 13px;
+}
+
+QLineEdit:Hover{
+border: 2px solid green;
+border-radius: 13px;
+}
+</string>
+       </property>
+       <property name="placeholderText">
+        <string>URL</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="download_button_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>160</y>
+         <width>371</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+border: 2px solid black;
+border-radius: 13px;
+color: black;
+background: #AC75FF;
+}
+
+QPushButton:Hover{
+border: 2px solid white;
+border-radius: 13px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Download</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="player_page"/>
+    </widget>
    </widget>
    <widget class="QFrame" name="frame_2">
     <property name="geometry">

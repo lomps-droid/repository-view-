@@ -17,8 +17,7 @@ class Ui_MainWindow(object):
         MainWindow.resize(407, 532)
         MainWindow.setMinimumSize(QtCore.QSize(407, 532))
         MainWindow.setMaximumSize(QtCore.QSize(407, 532))
-        MainWindow.setStyleSheet("Opacity: 0.80;\n"
-"")
+        MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
@@ -29,12 +28,87 @@ class Ui_MainWindow(object):
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
+        self.player_button = QtWidgets.QPushButton(self.frame)
+        self.player_button.setGeometry(QtCore.QRect(100, 10, 75, 61))
+        self.player_button.setStyleSheet("QPushButton{\n"
+"border: 2px solid black;\n"
+"border-radius: 13px;\n"
+"color: white\n"
+"}\n"
+"\n"
+"QPushButton:Hover{\n"
+"border: 2px solid white;\n"
+"border-radius: 13px;\n"
+"}")
+        self.player_button.setObjectName("player_button")
+        self.download_button = QtWidgets.QPushButton(self.frame)
+        self.download_button.setGeometry(QtCore.QRect(10, 10, 75, 61))
+        self.download_button.setStyleSheet("QPushButton{\n"
+"border: 2px solid black;\n"
+"border-radius: 13px;\n"
+"color: white\n"
+"}\n"
+"\n"
+"QPushButton:Hover{\n"
+"border: 2px solid white;\n"
+"border-radius: 13px;\n"
+"}")
+        self.download_button.setObjectName("download_button")
+        self.close = QtWidgets.QPushButton(self.frame)
+        self.close.setGeometry(QtCore.QRect(320, 10, 75, 61))
+        self.close.setStyleSheet("QPushButton{\n"
+"border: 2px solid black;\n"
+"border-radius: 13px;\n"
+"color: white\n"
+"}\n"
+"\n"
+"QPushButton:Hover{\n"
+"border: 2px solid white;\n"
+"border-radius: 13px;\n"
+"}")
+        self.close.setObjectName("close")
         self.img_player = QtWidgets.QFrame(self.centralwidget)
         self.img_player.setGeometry(QtCore.QRect(0, 80, 411, 231))
         self.img_player.setStyleSheet("")
         self.img_player.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.img_player.setFrameShadow(QtWidgets.QFrame.Raised)
         self.img_player.setObjectName("img_player")
+        self.stackedWidget = QtWidgets.QStackedWidget(self.img_player)
+        self.stackedWidget.setGeometry(QtCore.QRect(-1, -1, 411, 231))
+        self.stackedWidget.setObjectName("stackedWidget")
+        self.download_page = QtWidgets.QWidget()
+        self.download_page.setObjectName("download_page")
+        self.addURL = QtWidgets.QLineEdit(self.download_page)
+        self.addURL.setGeometry(QtCore.QRect(30, 40, 351, 41))
+        self.addURL.setStyleSheet("QLineEdit{\n"
+"border: 2px solid black;\n"
+"border-radius: 13px;\n"
+"}\n"
+"\n"
+"QLineEdit:Hover{\n"
+"border: 2px solid green;\n"
+"border-radius: 13px;\n"
+"}\n"
+"")
+        self.addURL.setObjectName("addURL")
+        self.download_button_2 = QtWidgets.QPushButton(self.download_page)
+        self.download_button_2.setGeometry(QtCore.QRect(20, 160, 371, 61))
+        self.download_button_2.setStyleSheet("QPushButton{\n"
+"border: 2px solid black;\n"
+"border-radius: 13px;\n"
+"color: black;\n"
+"background: #AC75FF;\n"
+"}\n"
+"\n"
+"QPushButton:Hover{\n"
+"border: 2px solid white;\n"
+"border-radius: 13px;\n"
+"}")
+        self.download_button_2.setObjectName("download_button_2")
+        self.stackedWidget.addWidget(self.download_page)
+        self.player_page = QtWidgets.QWidget()
+        self.player_page.setObjectName("player_page")
+        self.stackedWidget.addWidget(self.player_page)
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
         self.frame_2.setGeometry(QtCore.QRect(0, 310, 411, 181))
         self.frame_2.setStyleSheet("background: #A6A6FF")
@@ -60,4 +134,9 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.frame.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>Top Menu</p></body></html>"))
+        self.player_button.setText(_translate("MainWindow", "Player"))
+        self.download_button.setText(_translate("MainWindow", "Download"))
+        self.close.setText(_translate("MainWindow", "Exit"))
+        self.addURL.setPlaceholderText(_translate("MainWindow", "URL"))
+        self.download_button_2.setText(_translate("MainWindow", "Download"))
         self.label.setText(_translate("MainWindow", "By: xand.douglass@gmail.com"))
