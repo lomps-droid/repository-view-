@@ -19,5 +19,10 @@ Well , first we read the Truth Table and we incorporate in lines:
 
 <img src="https://i.imgur.com/kzbXca0.png">
 
+
+
 ## Images
-<img src="https://i.imgur.com/wqxswCQ.png" alt="Simulator">
+Simulator download: https://github.com/hneemann/Digital
+
+
+<img src="https://i.imgur.com/wqxswCQ.png" alt="Simulator" width="640px" height="480px">
