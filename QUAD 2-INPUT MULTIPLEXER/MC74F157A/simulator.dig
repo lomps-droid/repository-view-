@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>main_project</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>e1,s0,i0,i1</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>9</int>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity main_project is
+port(
+	e1, s0 , i0,i1 : in std_logic;
+	z : out std_logic
+);
+end main_project;
+
+architecture implement of main_project is
+begin
+	process(e1, s0 , i0,i1)
+	begin
+	if not e1 = &apos;0&apos; then
+		if (s0 = &apos;1&apos; and i1 = &apos;0&apos; ) then
+			z &lt;= &apos;0&apos;;
+		elsif (s0 = &apos;1&apos; and i1 = &apos;1&apos; ) then
+			z &lt;= &apos;1&apos;;
+		elsif (s0 = &apos;0&apos; and i0 = &apos;0&apos; ) then
+			z &lt;= &apos;0&apos;;
+		elsif (s0 = &apos;0&apos; and i0 = &apos;1&apos; ) then
+			z &lt;= &apos;1&apos;;
+		end if;
+	else --If |E1 = High Voltage Level ( 1 ) the values S, i0 and i1 don&apos;t care.
+		z &lt;= &apos;0&apos;;
+	end if;
+	end process;
+end implement;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>z</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1100" y="420"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Out</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1380" y="460"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>e1</string>
+        </entry>
+      </elementAttributes>
+      <pos x="900" y="340"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>s0</string>
+        </entry>
+      </elementAttributes>
+      <pos x="900" y="440"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>i0</string>
+        </entry>
+      </elementAttributes>
+      <pos x="900" y="480"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>i1</string>
+        </entry>
+      </elementAttributes>
+      <pos x="900" y="580"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Data</elementName>
+      <elementAttributes/>
+      <pos x="1300" y="560"/>
+    </visualElement>
+  </visualElements>
+  <wires>
+    <wire>
+      <p1 x="900" y="480"/>
+      <p2 x="1100" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="900" y="340"/>
+      <p2 x="1060" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="1060" y="420"/>
+      <p2 x="1100" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="900" y="580"/>
+      <p2 x="1060" y="580"/>
+    </wire>
+    <wire>
+      <p1 x="1060" y="500"/>
+      <p2 x="1100" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="900" y="440"/>
+      <p2 x="1100" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="1280" y="460"/>
+      <p2 x="1380" y="460"/>
+    </wire>
+    <wire>
+      <p1 x="1060" y="340"/>
+      <p2 x="1060" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="1060" y="500"/>
+      <p2 x="1060" y="580"/>
+    </wire>
+  </wires>
+  <measurementOrdering/>
+</circuit>
