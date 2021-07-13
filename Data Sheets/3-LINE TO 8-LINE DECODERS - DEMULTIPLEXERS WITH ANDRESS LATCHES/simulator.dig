@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>nome</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>ativar:6</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>11</int>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>library IEEE;
+use IEEE.std_logic_1164.all;
+
+
+entity nome is
+port(
+ativar : in std_logic_vector ( 5 downto 0 );
+-- GL = ativar(0)
+-- g1 = ativar(1)
+-- g2 = ativar (2)
+y0,y1,y2,y3,y4,y5,y6,y7 : out std_logic
+);
+end nome;
+
+architecture nome_da_archi of nome is
+begin
+process(ativar)
+begin
+if ativar(2) = &apos;1&apos; then 
+y0&lt;=&apos;1&apos;;y1&lt;=&apos;1&apos;;y2&lt;=&apos;1&apos;;y3&lt;=&apos;1&apos;;y4&lt;=&apos;1&apos;;y5&lt;=&apos;1&apos;;y6&lt;=&apos;1&apos;;y7&lt;=&apos;1&apos;;
+end if;
+if ativar(1) = &apos;0&apos; then y0&lt;=&apos;1&apos;;y1&lt;=&apos;1&apos;;y2&lt;=&apos;1&apos;;y3&lt;=&apos;1&apos;;y4&lt;=&apos;1&apos;;y5&lt;=&apos;1&apos;;y6&lt;=&apos;1&apos;;y7&lt;=&apos;1&apos;;end if;
+if ativar = &quot;010000&quot; then y0&lt;=&apos;0&apos;;y1&lt;=&apos;1&apos;;y2&lt;=&apos;1&apos;;y3&lt;=&apos;1&apos;;y4&lt;=&apos;1&apos;;y5&lt;=&apos;1&apos;;y6&lt;=&apos;1&apos;;y7&lt;=&apos;1&apos;;end if;
+if ativar = &quot;010001&quot; then y0&lt;=&apos;1&apos;;y1&lt;=&apos;0&apos;;y2&lt;=&apos;1&apos;;y3&lt;=&apos;1&apos;;y4&lt;=&apos;1&apos;;y5&lt;=&apos;1&apos;;y6&lt;=&apos;1&apos;;y7&lt;=&apos;1&apos;;end if;
+if ativar = &quot;010010&quot; then y0&lt;=&apos;1&apos;;y1&lt;=&apos;1&apos;;y2&lt;=&apos;0&apos;;y3&lt;=&apos;1&apos;;y4&lt;=&apos;1&apos;;y5&lt;=&apos;1&apos;;y6&lt;=&apos;1&apos;;y7&lt;=&apos;1&apos;;end if;
+if ativar = &quot;010011&quot; then y0&lt;=&apos;1&apos;;y1&lt;=&apos;1&apos;;y2&lt;=&apos;1&apos;;y3&lt;=&apos;0&apos;;y4&lt;=&apos;1&apos;;y5&lt;=&apos;1&apos;;y6&lt;=&apos;1&apos;;y7&lt;=&apos;1&apos;;end if;
+if ativar = &quot;010100&quot; then y0&lt;=&apos;1&apos;;y1&lt;=&apos;1&apos;;y2&lt;=&apos;1&apos;;y3&lt;=&apos;1&apos;;y4&lt;=&apos;0&apos;;y5&lt;=&apos;1&apos;;y6&lt;=&apos;1&apos;;y7&lt;=&apos;1&apos;;end if;
+if ativar = &quot;010101&quot; then y0&lt;=&apos;1&apos;;y1&lt;=&apos;1&apos;;y2&lt;=&apos;1&apos;;y3&lt;=&apos;1&apos;;y4&lt;=&apos;1&apos;;y5&lt;=&apos;0&apos;;y6&lt;=&apos;1&apos;;y7&lt;=&apos;1&apos;;end if;
+if ativar = &quot;010110&quot; then y0&lt;=&apos;1&apos;;y1&lt;=&apos;1&apos;;y2&lt;=&apos;1&apos;;y3&lt;=&apos;1&apos;;y4&lt;=&apos;1&apos;;y5&lt;=&apos;1&apos;;y6&lt;=&apos;0&apos;;y7&lt;=&apos;1&apos;;end if;
+if ativar = &quot;010111&quot; then y0&lt;=&apos;1&apos;;y1&lt;=&apos;1&apos;;y2&lt;=&apos;1&apos;;y3&lt;=&apos;1&apos;;y4&lt;=&apos;1&apos;;y5&lt;=&apos;1&apos;;y6&lt;=&apos;1&apos;;y7&lt;=&apos;0&apos;;end if;
+
+
+
+end process;
+end nome_da_archi;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>y0,y1,y2,y3,y4,y5,y6,y7</string>
+        </entry>
+      </elementAttributes>
+      <pos x="780" y="340"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Y0</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1360" y="240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Y1</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1360" y="300"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Y2</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1360" y="360"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Y3</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1360" y="420"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Y4</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1360" y="480"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Y5</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1360" y="540"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Y6</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1360" y="600"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Y7</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1360" y="660"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>ativar</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>6</int>
+        </entry>
+      </elementAttributes>
+      <pos x="500" y="400"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Testcase</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Test</string>
+        </entry>
+        <entry>
+          <string>Testdata</string>
+          <testData>
+            <dataString>ativar Y0 Y1 Y2 Y3 Y4 Y5 Y6 Y7
+0x2F 1 1 1 1 1 1 1 1
+0x10 0 1 1 1 1 1 1 1
+0x11 1 0 1 1 1 1 1 1
+0x12 1 1 0 1 1 1 1 1
+0x13 1 1 1 0 1 1 1 1
+0x14 1 1 1 1 0 1 1 1
+0x15 1 1 1 1 1 0 1 1
+0x16 1 1 1 1 1 1 0 1
+0x17 1 1 1 1 1 1 1 0</dataString>
+          </testData>
+        </entry>
+      </elementAttributes>
+      <pos x="400" y="200"/>
+    </visualElement>
+  </visualElements>
+  <wires>
+    <wire>
+      <p1 x="1000" y="480"/>
+      <p2 x="1140" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="1200" y="480"/>
+      <p2 x="1360" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="1000" y="420"/>
+      <p2 x="1200" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="1220" y="420"/>
+      <p2 x="1360" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="1000" y="360"/>
+      <p2 x="1160" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="1200" y="360"/>
+      <p2 x="1360" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="1000" y="460"/>
+      <p2 x="1160" y="460"/>
+    </wire>
+    <wire>
+      <p1 x="1160" y="300"/>
+      <p2 x="1360" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="1000" y="400"/>
+      <p2 x="1220" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="500" y="400"/>
+      <p2 x="740" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="1140" y="240"/>
+      <p2 x="1360" y="240"/>
+    </wire>
+    <wire>
+      <p1 x="1000" y="340"/>
+      <p2 x="1140" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="740" y="340"/>
+      <p2 x="780" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="1140" y="660"/>
+      <p2 x="1360" y="660"/>
+    </wire>
+    <wire>
+      <p1 x="1000" y="440"/>
+      <p2 x="1180" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="1160" y="600"/>
+      <p2 x="1360" y="600"/>
+    </wire>
+    <wire>
+      <p1 x="1000" y="380"/>
+      <p2 x="1200" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="1180" y="540"/>
+      <p2 x="1360" y="540"/>
+    </wire>
+    <wire>
+      <p1 x="1200" y="420"/>
+      <p2 x="1200" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="1200" y="360"/>
+      <p2 x="1200" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="1140" y="240"/>
+      <p2 x="1140" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="1140" y="480"/>
+      <p2 x="1140" y="660"/>
+    </wire>
+    <wire>
+      <p1 x="1220" y="400"/>
+      <p2 x="1220" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="740" y="340"/>
+      <p2 x="740" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="1160" y="460"/>
+      <p2 x="1160" y="600"/>
+    </wire>
+    <wire>
+      <p1 x="1160" y="300"/>
+      <p2 x="1160" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="1180" y="440"/>
+      <p2 x="1180" y="540"/>
+    </wire>
+  </wires>
+  <measurementOrdering/>
+</circuit>
