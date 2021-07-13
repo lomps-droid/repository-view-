@@ -13,7 +13,7 @@ architecture expressao of nome is
 begin
 process(entrada)
 begin
-    --entrada <= "111111111";
+    
     D <= '0' when entrada(8) = '0' else
         '0' when entrada(7) = '0' else
         '1' when entrada(6) = '0' else
@@ -22,7 +22,8 @@ begin
         '1' when entrada(3) = '0' else
         '1' when entrada(2) = '0' else
         '1' when entrada(1) = '0' else
-        '1' when entrada(0) = '0';
+        '1' when entrada(0) = '0' else
+	'1' when entrada = "111111111";
 
     C <= '1' when entrada(8) = '0' else
         '1' when entrada(7) = '0' else
@@ -32,8 +33,8 @@ begin
         '0' when entrada(3) = '0' else
         '1' when entrada(2) = '0' else
         '1' when entrada(1) = '0' else
-        '1' when entrada(0) = '0';
-
+        '1' when entrada(0) = '0' else
+	'1' when entrada = "111111111";
     B <= '1' when entrada(8) = '0' else
         '1' when entrada(7) = '0' else
         '0' when entrada(6) = '0' else
@@ -42,8 +43,8 @@ begin
         '1' when entrada(3) = '0' else
         '0' when entrada(2) = '0' else
         '0' when entrada(1) = '0' else
-        '1' when entrada(0) = '0';
-
+        '1' when entrada(0) = '0' else
+	'1' when entrada = "111111111";
     A <= '0' when entrada(8) = '0' else
         '1' when entrada(7) = '0' else
         '0' when entrada(6) = '0' else
@@ -52,6 +53,7 @@ begin
         '1' when entrada(3) = '0' else
         '0' when entrada(2) = '0' else
         '1' when entrada(1) = '0' else
-        '0' when entrada(0) = '0';
+        '0' when entrada(0) = '0' else
+	'1' when entrada = "111111111";
 end process;
 end expressao;
