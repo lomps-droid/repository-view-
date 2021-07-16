@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>main</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>OE,selects:3,position_switch:8</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>13</int>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity main is
+port(
+	OE : in std_logic;
+	selects : in std_logic_vector ( 2 downto 0 );
+	position_switch : in std_logic_vector ( 7 downto 0 );
+	z : out std_logic;
+	z_invert : out std_logic
+);
+end main;
+
+architecture main_arch of main is
+begin
+process(OE, selects,position_switch)
+begin
+if not OE = &apos;1&apos; then
+	if selects = &quot;---&quot; then
+		z &lt;= &apos;Z&apos;;
+		z_invert &lt;= &apos;Z&apos;;
+	end if;
+end if;
+if not OE = &apos;0&apos; then
+	if selects = &quot;000&quot; then
+		z &lt;= position_switch(0);
+		z_invert &lt;= not position_switch(0);
+	elsif selects = &quot;001&quot; then
+		z &lt;= position_switch(1);
+		z_invert &lt;= not position_switch(1);
+	elsif selects = &quot;010&quot; then
+		z &lt;= position_switch(2);
+		z_invert &lt;= not position_switch(2);
+	elsif selects = &quot;011&quot; then
+		z &lt;= position_switch(3);
+		z_invert &lt;= not position_switch(3);
+	elsif selects = &quot;100&quot; then
+		z &lt;= position_switch(4);
+		z_invert &lt;= not position_switch(4);
+	elsif selects = &quot;101&quot; then
+		z &lt;= position_switch(5);
+		z_invert &lt;= not position_switch(5);
+	elsif selects = &quot;110&quot; then
+		z &lt;= position_switch(6);
+		z_invert &lt;= not position_switch(6);
+	elsif selects = &quot;111&quot; then
+		z &lt;= position_switch(7);
+		z_invert &lt;= not position_switch(7);
+	end if;
+end if;
+end process;
+end main_arch;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>z,z_invert</string>
+        </entry>
+      </elementAttributes>
+      <pos x="880" y="400"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>OE</string>
+        </entry>
+      </elementAttributes>
+      <pos x="740" y="340"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>selects</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>3</int>
+        </entry>
+      </elementAttributes>
+      <pos x="740" y="420"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>position</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>8</int>
+        </entry>
+      </elementAttributes>
+      <pos x="740" y="500"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>z</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1300" y="380"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>|z</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1300" y="440"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Testcase</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Testdata</string>
+          <testData>
+            <dataString>OE selects position z |z
+0 0b101 0b10111010 0 0</dataString>
+          </testData>
+        </entry>
+      </elementAttributes>
+      <pos x="700" y="200"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Data</elementName>
+      <elementAttributes/>
+      <pos x="640" y="520"/>
+    </visualElement>
+  </visualElements>
+  <wires>
+    <wire>
+      <p1 x="1140" y="400"/>
+      <p2 x="1280" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="860" y="400"/>
+      <p2 x="880" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="1140" y="420"/>
+      <p2 x="1280" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="740" y="420"/>
+      <p2 x="880" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="740" y="500"/>
+      <p2 x="860" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="740" y="340"/>
+      <p2 x="860" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="1280" y="440"/>
+      <p2 x="1300" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="860" y="440"/>
+      <p2 x="880" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="1280" y="380"/>
+      <p2 x="1300" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="1280" y="380"/>
+      <p2 x="1280" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="1280" y="420"/>
+      <p2 x="1280" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="860" y="440"/>
+      <p2 x="860" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="860" y="340"/>
+      <p2 x="860" y="400"/>
+    </wire>
+  </wires>
+  <measurementOrdering/>
+</circuit>
