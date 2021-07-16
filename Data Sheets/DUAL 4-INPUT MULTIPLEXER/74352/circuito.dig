@@ -90,7 +90,7 @@ end implement;</string>
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>z</string>
+          <string>|z</string>
         </entry>
       </elementAttributes>
       <pos x="1120" y="420"/>
@@ -128,7 +128,7 @@ end implement;</string>
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>Enable</string>
+          <string>|Enable</string>
         </entry>
       </elementAttributes>
       <pos x="740" y="500"/>
@@ -139,7 +139,7 @@ end implement;</string>
         <entry>
           <string>Testdata</string>
           <testData>
-            <dataString>Select Data Enable z
+            <dataString>Select Data |Enable |z
 0b00 0b0000 0 1
 0b00 0b1000 0 0
 0b10 0b0000 0 1
