@@ -15,7 +15,7 @@ begin
 process(select_inputs, data_inputs,output_enable)
 begin
 if output_enable = '1' then
-	output_z <= '0';
+	output_z <= '1';
 end if;
 if output_enable = '0' then
 	if select_inputs = "00" then
