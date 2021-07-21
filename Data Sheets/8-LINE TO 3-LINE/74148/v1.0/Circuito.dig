@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>data_74148</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>enable_input_inverted,data_input_inverted:8</string>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>library IEEE;
+use IEEE.std_logic_1164.all;
+
+
+entity data_74148 is
+port(
+	enable_input_inverted : in std_logic;
+	data_input_inverted : in std_logic_vector ( 7 downto 0 );
+	group_signal_inverted : out std_logic;
+	data_output_inverted : out std_logic_vector ( 2 downto 0 );
+	enable_output_inverted : out std_logic
+);
+end data_74148;
+
+architecture chip of data_74148 is
+
+begin
+process(enable_input_inverted,data_input_inverted)
+begin
+	if enable_input_inverted = &apos;1&apos; then
+		group_signal_inverted &lt;= &apos;1&apos;;
+		data_output_inverted &lt;= &quot;111&quot;;
+		enable_output_inverted &lt;= &apos;1&apos;;
+	end if;
+	if enable_input_inverted = &apos;0&apos; then
+		if data_input_inverted = &quot;11111111&quot; then
+			group_signal_inverted &lt;= &apos;1&apos;;
+			data_output_inverted &lt;= &quot;111&quot;;
+			enable_output_inverted &lt;= &apos;0&apos;;
+		end if;
+		if data_input_inverted(0) = &apos;0&apos; then
+			group_signal_inverted &lt;= &apos;0&apos;;
+			data_output_inverted &lt;= &quot;000&quot;;
+			enable_output_inverted &lt;= &apos;1&apos;;
+		elsif data_input_inverted(1) = &apos;0&apos; then
+			group_signal_inverted &lt;= &apos;0&apos;;
+			data_output_inverted &lt;= &quot;100&quot;;
+			enable_output_inverted &lt;= &apos;1&apos;;
+
+		elsif data_input_inverted(2) = &apos;0&apos; then
+			group_signal_inverted &lt;= &apos;0&apos;;
+			data_output_inverted &lt;= &quot;010&quot;;
+			enable_output_inverted &lt;= &apos;1&apos;;
+
+		elsif data_input_inverted(3) = &apos;0&apos; then
+			group_signal_inverted &lt;= &apos;0&apos;;
+			data_output_inverted &lt;= &quot;110&quot;;
+			enable_output_inverted &lt;= &apos;1&apos;;
+
+		elsif data_input_inverted(4) = &apos;0&apos; then
+			group_signal_inverted &lt;= &apos;0&apos;;
+			data_output_inverted &lt;= &quot;001&quot;;
+			enable_output_inverted &lt;= &apos;1&apos;;
+
+		elsif data_input_inverted(5) = &apos;0&apos; then
+			group_signal_inverted &lt;= &apos;0&apos;;
+			data_output_inverted &lt;= &quot;101&quot;;
+			enable_output_inverted &lt;= &apos;1&apos;;
+
+		elsif data_input_inverted(6) = &apos;0&apos; then
+			group_signal_inverted &lt;= &apos;0&apos;;
+			data_output_inverted &lt;= &quot;011&quot;;
+			enable_output_inverted &lt;= &apos;1&apos;;
+
+		elsif data_input_inverted(7) = &apos;0&apos; then
+			group_signal_inverted &lt;= &apos;0&apos;;
+			data_output_inverted &lt;= &quot;111&quot;;
+			enable_output_inverted &lt;= &apos;1&apos;;
+		end if;
+	end if;
+end process;
+end chip;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>group_signal_inverted,data_output_inverted:3,enable_output_inverted</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>23</int>
+        </entry>
+      </elementAttributes>
+      <pos x="780" y="380"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>Enable</string>
+        </entry>
+      </elementAttributes>
+      <pos x="600" y="320"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>E</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>8</int>
+        </entry>
+      </elementAttributes>
+      <pos x="600" y="540"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>A</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1400" y="300"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>B</string>
+        </entry>
+        <entry>
+          <string>intFormat</string>
+          <intFormat>bin</intFormat>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>3</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1400" y="380"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>C</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1400" y="480"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Data</elementName>
+      <elementAttributes/>
+      <pos x="560" y="620"/>
+    </visualElement>
+  </visualElements>
+  <wires>
+    <wire>
+      <p1 x="700" y="400"/>
+      <p2 x="780" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="1240" y="400"/>
+      <p2 x="1340" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="600" y="320"/>
+      <p2 x="700" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="1280" y="480"/>
+      <p2 x="1400" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="1240" y="420"/>
+      <p2 x="1280" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="600" y="540"/>
+      <p2 x="700" y="540"/>
+    </wire>
+    <wire>
+      <p1 x="700" y="380"/>
+      <p2 x="780" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="1340" y="380"/>
+      <p2 x="1400" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="1240" y="380"/>
+      <p2 x="1320" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="1320" y="300"/>
+      <p2 x="1400" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="1280" y="420"/>
+      <p2 x="1280" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="1320" y="300"/>
+      <p2 x="1320" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="700" y="400"/>
+      <p2 x="700" y="540"/>
+    </wire>
+    <wire>
+      <p1 x="700" y="320"/>
+      <p2 x="700" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="1340" y="380"/>
+      <p2 x="1340" y="400"/>
+    </wire>
+  </wires>
+  <measurementOrdering/>
+</circuit>

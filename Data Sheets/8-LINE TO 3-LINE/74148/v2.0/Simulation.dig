@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement>
+      <elementName>External</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>GHDL</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>chip_74148</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>enable_input_inverted,data_input_inverted:8</string>
+        </entry>
+        <entry>
+          <string>Code</string>
+          <string>library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity chip_74148 is
+port(
+	--Inputs
+	enable_input_inverted : in std_logic; -- E1
+	data_input_inverted : in std_logic_vector ( 7 downto 0 ); -- I0 ~ I7
+	--Outputs
+	group_signal_inverted : out std_logic; --GS
+	analogic_output_inverted : out std_logic_vector ( 2 downto 0 ); -- A0 ~ A2
+	enable_output_inverted : out std_logic --EO
+	
+);
+end chip_74148;
+
+
+architecture data_chip of chip_74148 is
+
+--signal enable_input : std_logic := &apos;0&apos;;
+--signal data_input : std_logic_vector (7 downto 0 ) := &quot;00000000&quot;;
+--signal group_signal : std_logic := &apos;0&apos;;
+--signal analogic_output : std_logic_vector (2 downto 0 ) := &quot;000&quot;;
+--signal enable_output : std_logic := &apos;0&apos;;
+
+
+begin
+process(enable_input_inverted, data_input_inverted)
+begin
+if ( enable_input_inverted = &apos;1&apos;) then
+
+	group_signal_inverted &lt;= &apos;1&apos;;
+	analogic_output_inverted &lt;= &quot;111&quot;;
+	enable_output_inverted &lt;= &apos;1&apos;;
+end if;
+if ( enable_input_inverted = &apos;0&apos;) then
+	if (data_input_inverted = &quot;11111111&quot;) then
+		group_signal_inverted &lt;= &apos;1&apos;;
+		analogic_output_inverted &lt;= &quot;111&quot;;
+		enable_output_inverted &lt;= &apos;0&apos;;
+	end if;
+	
+	for i in 0 to 7 loop
+		if (data_input_inverted(i) = &apos;0&apos;) then
+			group_signal_inverted &lt;= &apos;0&apos;;
+			enable_output_inverted &lt;= &apos;1&apos;;
+			if i = 0 then analogic_output_inverted &lt;= &quot;000&quot;;
+			elsif i = 1 then analogic_output_inverted &lt;= &quot;100&quot;;
+			elsif i = 2 then analogic_output_inverted &lt;= &quot;010&quot;;
+			elsif i = 3 then analogic_output_inverted &lt;= &quot;110&quot;;
+			elsif i = 4 then analogic_output_inverted &lt;= &quot;001&quot;;
+			elsif i = 5 then analogic_output_inverted &lt;= &quot;101&quot;;
+			elsif i = 6 then analogic_output_inverted &lt;= &quot;011&quot;;
+			elsif i = 7 then analogic_output_inverted &lt;= &quot;111&quot;;
+			end if;
+			exit;
+		end if;
+	end loop;
+end if;
+end process;
+end data_chip;</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>group_signal_inverted,analogic_output_inverted:3,enable_output_inverted</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>23</int>
+        </entry>
+      </elementAttributes>
+      <pos x="700" y="320"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>|GS</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1380" y="240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>|A0-A2</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>3</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1380" y="340"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>|EO</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1380" y="440"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>|E1</string>
+        </entry>
+      </elementAttributes>
+      <pos x="580" y="300"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>|I0-I7</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>8</int>
+        </entry>
+      </elementAttributes>
+      <pos x="580" y="360"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Data</elementName>
+      <elementAttributes/>
+      <pos x="460" y="480"/>
+    </visualElement>
+  </visualElements>
+  <wires>
+    <wire>
+      <p1 x="1160" y="320"/>
+      <p2 x="1260" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="600" y="320"/>
+      <p2 x="700" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="1260" y="240"/>
+      <p2 x="1380" y="240"/>
+    </wire>
+    <wire>
+      <p1 x="1160" y="340"/>
+      <p2 x="1380" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="600" y="340"/>
+      <p2 x="700" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="1160" y="360"/>
+      <p2 x="1260" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="580" y="360"/>
+      <p2 x="600" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="1260" y="440"/>
+      <p2 x="1380" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="580" y="300"/>
+      <p2 x="600" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="600" y="340"/>
+      <p2 x="600" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="600" y="300"/>
+      <p2 x="600" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="1260" y="240"/>
+      <p2 x="1260" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="1260" y="360"/>
+      <p2 x="1260" y="440"/>
+    </wire>
+  </wires>
+  <measurementOrdering/>
+</circuit>
