@@ -5,5 +5,6 @@
 
 
 #### Interface gráfica v2.0
+OBS: O Arquivo de "Images" precisa está localizada na mesma pasta que o aplicativo.
 https://www.mediafire.com/file/a5e0sncm0thdkhl/main.exe/file
 
