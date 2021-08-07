@@ -6,8 +6,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Testes</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css '%}">
+    <title>Contato</title>
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+
 </head>
 <body>
     {% if messages %}
@@ -18,25 +22,27 @@
         </div>
         {% endfor %}
     {% endif %}
+    <!-- MENU BAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Inicio</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="/contato">Contato</a>
-            </li>
-            <li class="nav-item">
+      <a class="navbar-brand" href="/">Inicio</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/contato">Contato</a>
+          </li>
+          <li class="nav-item">
               <a class="nav-link" href="/updates">Updates</a>
           </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Desativado</a>
-              </li>
-          </ul>
-        </div>
-    </nav>
+          <li class="nav-item">
+              <a class="nav-link disabled" href="#">Desativado</a>
+            </li>
+        </ul>
+      </div>
+  </nav>
+  <!-- END BAR -->
     <div class="alert alert-success" role="alert">
     <div class='container'>
       <h4 class="alert-heading">Contato</h4>

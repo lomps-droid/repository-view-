@@ -7,28 +7,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css '%}">
-</head>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+
+  </head>
 <body>
+    <!-- MENU BAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Inicio</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="/contato">Contato</a>
-            </li>
-            <li class="nav-item">
+      <a class="navbar-brand" href="/">Inicio</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/contato">Contato</a>
+          </li>
+          <li class="nav-item">
               <a class="nav-link" href="/updates">Updates</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link disabled" href="#">Desativado</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Desativado</a>
-              </li>
-          </ul>
-        </div>
-    </nav>
+        </ul>
+      </div>
+  </nav>
+  <!-- END BAR -->
 
 
     <div class="jumbotron primary">
@@ -43,10 +50,10 @@
         <h1 class="display-4">Updates</h1>
         <p>Aqui fica registrado apenas os 04 últimos updates realizados no sistema.</p>
         <hr class="my-4">
+        <p>07/08/2021 - Corrigido sistema de Collapso do Bootstrap</p>
         <p>06/08/2021 - Website alterado para: <font color="green">https://ale-djapp.herokuapp.com</font></p>
         <p>06/08/2021 - Sistema transferido para o <font color="green">PostgreSQL</font></p>
         <p>05/08/2021 - Sistema para receber emails foi adicionado</p>
-        <p>05/08/2021 - Adicionado sistema de formulário para envio de email</p>
     </div>
     <div class="alert alert-primary" role="alert">
         Criador por: Alexandre Douglas | xand.douglass@gmail.com
