@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css '%}">
+</head>
+<body>
+    <!-- MENU BAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/contato">Contato</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/updates">Updates</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Desativado</a>
+              </li>
+          </ul>
+        </div>
+    </nav>
+    <!-- END BAR -->
+
+
+    <div class="alert alert-dark" role="alert">
+        <h4 class="alert-heading">UPDATES</h4>
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Mês: 08/2021
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>06/08/2021 - Website alterado para: <font color="green">https://ale-djapp.herokuapp.com</font></p>
+                    <p>06/08/2021 - Sistema transferido para o <font color="green">PostgreSQL</font></p>
+                    <p>05/08/2021 - Sistema para receber emails foi adicionado</p>
+                    <p>05/08/2021 - Adicionado sistema de formulário para envio de email</p>
+                    <p>05/08/2021 - Adicionado página para Contato</p>
+                    <p>04/08/2021 - Servidor transferido para o MySQL</p>
+                    <p>01/08/2021 - Servidor publicado na web: <font color="green">https://lectore0-adf.herokuapp.com</font></p>
+                    <p>01/08/2021 - Adicionado heroku</p>
+                    <p>01/08/2021 - Adicionado Bootstrap ao projeto;</p>
+                    <p>01/08/2021 - Iniciado o projeto.</p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- CREDITS BAR -->
+    <div class="alert alert-primary" role="alert">
+        Criador por: Alexandre Douglas | xand.douglass@gmail.com
+    </div>
+</body>
+</html>

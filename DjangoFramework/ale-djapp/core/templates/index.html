@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css '%}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/contato">Contato</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/updates">Updates</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Desativado</a>
+              </li>
+          </ul>
+        </div>
+    </nav>
+
+
+    <div class="jumbotron primary">
+        <h1 class="display-4">Hello World!</h1>
+        <p class="lead">Simples website elaborado através do Django Framework</p>
+        <hr class="my-4">
+        <p>Esse projeto está sendo elaborado utilizando das aulas da Udemy: <font color="green">Programação Web com Python e Django Framework: Essencial</font> </p>
+        <p>Para escrever a estrutura HTML+CSS foi usado recursos do Bootstrap.</p>
+        <hr class="my-4">
+        <p>A real intenção desse projeto é suportar várias outras aplicações que serão adicionadas ao decorrer do tempo.</p>
+        <hr class="my-4">
+        <h1 class="display-4">Updates</h1>
+        <p>Aqui fica registrado apenas os 04 últimos updates realizados no sistema.</p>
+        <hr class="my-4">
+        <p>06/08/2021 - Website alterado para: <font color="green">https://ale-djapp.herokuapp.com</font></p>
+        <p>06/08/2021 - Sistema transferido para o <font color="green">PostgreSQL</font></p>
+        <p>05/08/2021 - Sistema para receber emails foi adicionado</p>
+        <p>05/08/2021 - Adicionado sistema de formulário para envio de email</p>
+    </div>
+    <div class="alert alert-primary" role="alert">
+        Criador por: Alexandre Douglas | xand.douglass@gmail.com
+    </div>
+</body>
+</html>
