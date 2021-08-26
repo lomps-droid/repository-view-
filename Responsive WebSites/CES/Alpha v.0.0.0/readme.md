@@ -6,5 +6,7 @@ Its creation was mirrored in websites of other institutions, as it is a function
 ### Important functions 
 
 1- The site's news has "markdown", that is, it accepts html tags.
+
 2- System for receiving emails.
+
 3- System to edit/add/delete news without having to enter the administration area. 
