@@ -1,0 +1,34 @@
+<!-- NÓTICIAS EM GERAL -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- ESTRUTURA GERAL -->
+
+
+<hr>
+<h3 class="text-center" style="font-family: 'Anton', sans-serif;">NOTÍCIAS</h3>
+<hr>
+<div class="card-columns mx-auto w-50">
+    {% for new in news %}
+    <div class="card">
+        <img class="card-img-top" src="{{ new.imagem.url }}" alt="Imagem de capa do card">
+        <div class="card-body">
+            <p class="card-title" style="font-family: 'Teko', sans-serif;font-size: 19px;">{{ new.nome }}</p>
+            <a href="{% url 'noticias' new.slug %}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Ler mais...</a>
+            <!-- MODAL FIM-->
+            <hr>
+            <p class="card-text"><small class="text-muted">Postando em {{ new.criado|date:'d/m/Y' }}</small></p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+<!-- FIM ESTRUTURA GERAL -->
+
+
+{% endblock %}

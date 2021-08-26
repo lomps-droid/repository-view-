@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- ESTRUTURA GERAL -->
+<!-- FORMULÁRIO PARA EDITAR NOTÍCIA -->
+{% if user_type == 'True' %}
+    <div class="alert alert-success" role="alert">
+        <div class='container'>
+            <h4 class="alert-heading">Adicione uma Notícia</h4>
+            <hr>
+            <form method="POST" class="form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <!-- FIM GALERIA OPCIONAL -->
+                <hr>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+        </div>
+    <!-- FIM ESTRUTURA GERAL -->
+{% else %}
+<h1> VOCÊ NÃO TEM PERMISSÃO PARA ACESSAR ESSA PÁGINA </h1>
+{% endif %}
+{% endblock %}

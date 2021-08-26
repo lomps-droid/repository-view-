@@ -1,0 +1,133 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <!-- BOOTSTRAP -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+    <!-- END BOOTSTRAP -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+    <!-- JAVASCRIPT -->
+    <script>
+    $('.carousel').carousel({
+        interval: 2000
+    })
+    </script>
+</head>
+<body>
+    {% if messages %}
+    {% for message in messages %}
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>AVISO:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <!-- CABEÇARIO TOPO -->
+    <div class="bg-dark shadow-lg p-3 mb-1">
+        <h3 class="font-weight-bold text-center text-white">COLÉGIO ESPÍRITO SANTO</h3>
+    </div>
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">INICIO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Ensino
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Infantil</a>
+                        <a class="dropdown-item" href="#">Fundamental</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/eventos">Notícias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Calendário Escolar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contato">Fale Conosco</a>
+                </li>
+                {% if user_type == 'True'%}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    ÁREA DA ADMINISTRAÇÃO
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/news">Adicionar Noticia</a>
+                        <a class="dropdown-item" href="/noticias/administration/news">Editar/Deletar Noticias</a>
+                        <a class="dropdown-item" href="/admin">Admin</a>
+
+                    </div>
+                </li>
+                {% endif %}
+                <!-- LOGIN -->
+                {% if user.is_anonymous %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Área do Usuário
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+                    </div>
+                </li>
+                <!-- ÁREA DO USUÁRIO -->
+                {% else %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Área do Usuário
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        {% if user_type == 'False'%}<a class="dropdown-item" href="{% url 'aluno' user.identificacao %}">Área do Aluno</a>{% endif %}
+                        <a class="dropdown-item" href="{% url 'logout' %}">SAIR</a>
+
+                    </div>
+                </li>
+                {% endif %}
+                <!-- FIM ÁREA DO USUÁRIO -->
+            </ul>
+        </div>
+    </nav>
+    <!-- FIM MENU -->
+    {% block content %} {% endblock %}
+
+
+    <!-- END SITE -->
+    <hr>
+    <div class="alert alert-primary row mx-md-n5" role="alert">
+        <div class="col py-3 px-md-5w-25" style="font-family: 'Staatliches', cursive;">
+            <h3 class="text-left">Endereço</h3><hr>
+            <p>Rua Comandante Garcindo, 88</p>
+                <p>Centro</p>
+                <p>Neópolis - SE</p>
+                <p>CEP: 49980-000</p>
+        </div>
+        <div class="col py-3 px-md-5 "style="font-family: 'Staatliches', cursive;">
+            <h3 class="text-left">Redes Sociais</h3><hr>
+            <p>Instagram: @colegioespirito</p>
+        </div>
+        <div class="col py-3 px-md-5"style="font-family: 'Staatliches', cursive;">"Matricule seu filho e tenha a certeza de que ele estará sempre preparado para as etapas mais importantes da vida, afinal a educação é para sempre!"</div>
+    </div>
+
+</body>
+</html>

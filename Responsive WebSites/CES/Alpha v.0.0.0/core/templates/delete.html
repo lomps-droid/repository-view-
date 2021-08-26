@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- ESTRUTURA GERAL -->
+<!-- FORMULÁRIO PARA EDITAR NOTÍCIA -->
+{% if user_type == 'True' %}
+    <div class="alert bg-dark" role="alert">
+        <div class='container'>
+            <h4 class="alert-heading">Deseja mesmo deletar essa notícia?</h4>
+            <hr>
+            <form method="POST" class="form">
+                {% csrf_token %}
+                <hr>
+                <button type="submit" class="btn btn-primary">Deletar</button>
+            </form>
+        </div>
+        </div>
+    <!-- FIM ESTRUTURA GERAL -->
+{% else %}
+<h1> VOCÊ NÃO TEM PERMISSÃO PARA ACESSAR ESSA PÁGINA </h1>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,11 @@
+__pycache__
+
+cesrepository
+
+*.*-
+
+*.pyc
+
+.env
+
+.idea

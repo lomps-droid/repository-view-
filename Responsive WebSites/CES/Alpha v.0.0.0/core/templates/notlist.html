@@ -1,0 +1,33 @@
+<!-- Área de Notícias para administrar -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% if user_type == 'True'%}
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope='col'>Opções</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for noticia in news %}
+          <tr>
+            <td>{{ noticia.id }}</td>
+            <td>{{ noticia.nome }}</td>
+            <td><a class="btn btn-primary btn-sm" href="{% url 'update_noticia' noticia.pk %}" role="button">Editar</a>
+            <a class="btn btn-secondary btn-sm" href="{% url 'delete_noticia' noticia.pk %}" role="button">Deletar</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <h1> VOCÊ NÃO TEM PERMISSÃO PARA ACESSAR ESSA PÁGINA </h1>
+    {% endif %}
+
+
+
+{% endblock %}

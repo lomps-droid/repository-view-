@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load blog_extras %}
+{% block content %}
+
+<!-- ESTRUTURA GERAL -->
+
+
+
+<div class="container">
+    <h1 class="text-center p-5" style="font-family: 'Teko', sans-serif;">{{ news.nome }}</h1>
+    <p class="text-center font-weight-light">{{ news.descricao }}</p>
+    <hr>
+</div>
+<div class="container p-3" style="text-align: center;">
+    <img src="{{ news.imagem.url }}" class="mx-auto" alt="{{ news.nome }}"/>
+</div>
+<div class="container p-5 content-markdown  text-center text-monospace"><p class="text-monospace text-center">{{ news.texto|convert_markdown|safe }}</p></div>
+
+
+
+
+
+
+
+<!-- FIM ESTRUTURA GERAL -->
+
+</script>
+{% endblock %}
